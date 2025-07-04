@@ -52,7 +52,7 @@ Retrospective:
     - Is everything tested? Are you confident in your code?
 ```
 
-5. Iteration Four:
+4. Iteration Four:
     - Characters may belong to one or more Factions.
         * Newly created Characters belong to no Faction. 
     - A Character may Join or Leave one or more Factions.
@@ -60,7 +60,7 @@ Retrospective:
     - Allies cannot Deal Damage to one another.
     - Allies can Heal one another.
 
-6. Iteration Five:
+5. Iteration Five:
     - Characters can damage non-character things (props).
         * Anything that has Health may be a target
         * These things cannot be Healed and they do not Deal Damage
