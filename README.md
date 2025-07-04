@@ -5,7 +5,7 @@ Background This is a fun kata that has the programmer building simple combat rul
 
 ## Requiered
 
-- Minimum Java 17
+- Minimum Java 21
 
 ## DevDependency
 
