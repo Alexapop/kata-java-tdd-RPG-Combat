@@ -1,6 +1,8 @@
 
 # Kata RPG Combat
 
+This project is part of the programming exercises completed at Factoría F5.
+
 Background This is a fun kata that has the programmer building simple combat rules, as for a role-playing game (RPG). It is implemented as a sequence of iterations. The domain doesn't include a map kills or any other character sapart from their ability to damage and heal one another.
 
 ## Requiered
@@ -11,6 +13,17 @@ Background This is a fun kata that has the programmer building simple combat rul
 
 - JUnit
 - Hamcrest
+
+## Exercise Requirements
+
+- Fork the repository.
+- Write the necessary tests to achieve a minimum test coverage of 70%.
+- Complete at least Iteration Three to obtain 70% of the total grade.
+- Complete Iteration Five to obtain 100% of the total grade.
+
+## Deliverables
+
+- A screenshot of the VS Code **Testing** section showing the test coverage.
 
 ## Installation
 
