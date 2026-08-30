@@ -4,15 +4,21 @@ public class Character {
     private int health;
     private int level;
     private boolean alive;
+    private final FighterCharacter fighterCharacter;
 
-    public Character() {
+    public Character(FighterCharacter fighterCharacter) {
         health = 1000;
         level = 1;
         alive = true;
+        this.fighterCharacter = fighterCharacter;
     }
 
-    public void characterDamagesCharacter(Character target, int damage) {
+    public void characterDamagesCharacter(Character target, int damage, int distance) {
         if (this == target) {
+            return;
+        }
+
+        if (distance > fighterCharacter.getAttackRange()) {
             return;
         }
         if (target.level >= this.level + 5) {
