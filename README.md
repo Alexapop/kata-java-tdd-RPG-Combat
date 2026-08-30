@@ -1,89 +1,63 @@
-
 # Kata RPG Combat
 
 This project is part of the programming exercises completed at Factoría F5.
 
-Background This is a fun kata that has the programmer building simple combat rules, as for a role-playing game (RPG). It is implemented as a sequence of iterations. The domain doesn't include a map kills or any other character sapart from their ability to damage and heal one another.
+#### Background
 
-## Requiered
+This is a fun kata in which the programmer builds simple combat rules for a role-playing game (RPG). It is implemented as a sequence of iterations.
+The domain does not include a map, kills, or any character attributes apart from the characters' ability to damage and heal one another.
 
-- Minimum Java 21
+## Instructions
 
-## DevDependency
+1. Iteration One:
+   - All characters, when created, have:
+     - Health starting at 1000.
+     - Level starting at 1.
+     - An alive or dead status, starting alive (represented by a boolean value).
+   - Characters can deal damage to other characters.
+     - Damage is subtracted from health.
+     - When the damage received is equal to or greater than the current health, health becomes 0 and the character dies.
+   - A character can heal another character.
+     - Dead characters cannot be healed.
+     - Healing cannot raise health above 1000.
 
-- JUnit
-- Hamcrest
+2. Iteration Two:
+   - A character cannot deal damage to itself.
+   - A character can only heal itself.
+   - When dealing damage:
+     - If the target is five or more levels above the attacker, damage is reduced by 50%.
+     - If the target is five or more levels below the attacker, damage is increased by 50%.
 
-## Exercise Requirements
+3. Iteration Three:
+   - Characters have a maximum attack range.
+   - Melee fighters have a range of 2 meters.
+   - Ranged fighters have a range of 20 meters.
+   - Characters must be within range to deal damage to a target.
 
-- Fork the repository.
-- Write the necessary tests to achieve a minimum test coverage of 70%.
-- Complete at least Iteration Three to obtain 70% of the total grade.
-- Complete Iteration Five to obtain 100% of the total grade.
+## Technologies
 
-## Deliverables
-
-- A screenshot of the VS Code **Testing** section showing the test coverage.
+- Java 21
+- Maven
+- JUnit 5
+- JaCoCo
 
 ## Installation
 
-Just clone the Kata
+Clone the repository:
 
-    
-## Instructions
-Complete each iteration before reading the next one. 2. It's recommended you perform this kata with a pairing partner and while writing tests.
-
-1. Iteration One:
-    - All Characters, when created, have:
-        * Health, starting at 1000 
-        * Level, starting at 1 
-        * May be Alive or Dead, starting Alive (Alive may be a true/false) 
-    - Characters can Deal Damage to Characters.
-        * Damage is subtracted from Health 
-        * When damage received exceeds current Health, Health becomes 0 and the character dies 
-    - A Character can Heal a Character. 
-        * Dead characters cannot be healed 
-        * Healing cannot raise health above 1000
-
-2. Iteration Two:
-    - A Character cannot Deal Damage to itself.
-    - A Character can only Heal itself. 
-    - When dealing damage:
-        * If the target is 5 or more Levels above the attacker, Damage is reduced by 50% 
-        * If the target is 5 or more levels below the attacker, Damage is increased by 50%
-
-3. Iteration Three:
-    - Characters have an attack Max Range. 
-    - Melee fighters have a range of 2 meters. 
-    - Ranged fighters have a range of 20 meters. 
-    - Characters must be in range to deal damage to a target.
-
-```
-Retrospective:
-    - Are you keeping up with the requirements? Has any iteration been a big challenge?
-    - Do you feel good about your design? Is it scalable and easily adapted to new requirements? 
-    - Is everything tested? Are you confident in your code?
+```bash
+git clone https://github.com/Alexapop/kata-java-tdd-RPG-Combat.git
 ```
 
-4. Iteration Four:
-    - Characters may belong to one or more Factions.
-        * Newly created Characters belong to no Faction. 
-    - A Character may Join or Leave one or more Factions.
-    - Players belonging to the same Faction are considered Allies.
-    - Allies cannot Deal Damage to one another.
-    - Allies can Heal one another.
+Run the tests:
 
-5. Iteration Five:
-    - Characters can damage non-character things (props).
-        * Anything that has Health may be a target
-        * These things cannot be Healed and they do not Deal Damage
-        * These things do not belong to Factions; they are neutral
-        * When reduced to 0 Health, things are Destroyed
-        * As an example, you may create a Tree with 2000 Health
+```bash
+mvn test
+```
 
-```
-Retrospective 
-    - What problems did you encounter? 
-    - What have you learned? Any new technique or pattern? 
-    - Share your design with others, and get feedback on different approaches.
-```
+## Test Coverage
+
+The project currently has 87.93% test coverage, measured using the VS Code
+Testing tools.
+
+![Test coverage](docs/assets/test-coverage.png)
